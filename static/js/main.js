@@ -56,16 +56,16 @@ $(document).on('ready', function(){
         invalidHandler: function(event, validator) {
             console.log(event);
         },
-        submitHandler: function(form){
+        /*submitHandler: function(form){
             send_msg_form_submit();
-        }
+        }*/
     });
 });
 
-
+/*
 function send_msg_form_submit() {
     console.log("OTP Sent !!");
-}
+}*/
 
 
 function populateUserDetails(id) {
