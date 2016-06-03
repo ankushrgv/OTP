@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+
+{% block layout %}
+<div class="content">
+	<div class="container">
+		<div class="row">
+			<div class="ten columns">
+				{% block tabs %}
+					{% include 'partials/send_msg_form.html' %}
+				{% endblock tabs %}
+			</div>
+			
+		</div>
+	</div>
+</div>
+{% endblock layout %} 

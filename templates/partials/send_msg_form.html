@@ -1,0 +1,12 @@
+
+{% block send_msg%}
+	<div class="send-msg-container" id="send-msg-container">
+		<form id="send-msg-form" class="send-msg-form" method="POST" action="">
+			{% csrf_token %}
+			<input type="text" id="id_msg" name="msg" value="Hi Your OTP is : {{ otp }}">
+			<input type="hidden" id="id_otp" name="otp" value="{{ otp }}">
+			<input type="hidden" id="id_phone" name="phone" value="91{{ ph_number }}">
+			<button type="submit" id="send-msg-form-submit" class="send-msg-form-submit button-primary">Send</button>
+		</form>
+	</div>
+{% endblock send_msg%}

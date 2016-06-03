@@ -1,0 +1,42 @@
+{% load utils %}
+
+{% block tabs %}
+	<ul class="tab-list">
+		{% for tab in tabtypes %}
+			<li class="cls_tab {% if request.GET.type == tab %}active{% endif %}{% if not request.GET.type and tab == 'contacts' %}active{% endif %}" id="{{tab}}">
+				<a href="?type={{tab}}" data-type="{{tab}}">{{tab|title}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+	<ul class="object-list cls_tab_content" id="normalized">
+		
+		{% for result in page %}
+			{% if norm_list == 0 %}
+				<a href="javascript:void(0)" id="{{ result.id }}" class="cls_string_name" data-string-type="contacts">
+			{% else %}	
+				<a href="javascript:void(0)" id="{{ result.id }}" class="cls_string_name" data-string-type="message">
+			{% endif %}
+		
+			<div class="string-name">
+				<div class="string-name-container">
+					{% if norm_list == 0 %}
+						<li>{{ result.first_name|title }} {{result.last_name|title}}</li>
+					{% else %}
+						<li>{{ result.kisan_user|title }}</li>
+					{% endif %}
+				</div>
+				</a>
+				<div class="text-container">
+					{% if norm_list == 0 %}
+						<p>No. of OTPs sent: {{ result.otp_count}}</p>
+					{% elif norm_list == 1 %}
+						<p>OTP : {{ result.otp}}</p>
+						<p>Status : {{result.status}}</p>
+						<p>Sent Time : {{ result.sent_time}} </p> 
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+		{% include 'partials/pagination.html' %}
+	</ul>
+{% endblock tabs %}
