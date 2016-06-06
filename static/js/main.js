@@ -60,6 +60,12 @@ $(document).on('ready', function(){
             send_msg_form_submit();
         }*/
     });
+
+    $('.loading').hide();
+    $(document).on('click','.send-msg-form-submit', function(event){            
+        $('.loading').show();
+    }); 
+
 });
 
 /*

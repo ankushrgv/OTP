@@ -353,6 +353,7 @@ a.cross {
     margin-left: 40%;
     margin-top: 140px;
     max-width: 400px;
+    display: inline-block;
 }
 
 .send-msg-container input#id_msg{
@@ -364,4 +365,15 @@ a.cross {
 .send-msg-container button#send-msg-form-submit{
     margin-left: 115px;
     margin-top: 10px;
+}
+
+.loading{
+    display: inline-block;
+    width: 140px;
+    height: 140px;    
+}
+
+.loading img{
+    width: 140px;
+    height: 140px;    
 }
